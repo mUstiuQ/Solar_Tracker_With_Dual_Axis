@@ -1,6 +1,6 @@
 # 🌞 Solar Tracker - Sistem de Urmărire Solară pe Două Axe
 
-![Solar Tracker](docs/demo.gif)
+![](https://img.shields.io/badge/Arduino-8A2BE2) ![](https://img.shields.io/badge/C++-FFDD33)
 
 Un sistem inteligent de urmărire solară pe două axe, optimizat pentru eficiență energetică și monitorizare în timp real.
 
