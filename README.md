@@ -8,7 +8,7 @@ Un sistem inteligent de urmărire solară pe două axe, optimizat pentru eficien
 ✅ Urmărire automată a soarelui cu **servo-motoare**  
 ✅ **Afișaj LCD** pentru poziție și informații  
 ✅ Algoritm eficient de **detectare a luminii**  
-✅ **Microcontroler Arduino / ESP32** pentru control  
+✅ **Microcontroler Arduino** pentru control  
 ✅ **Design modular**, ușor de adaptat pentru diverse aplicații  
 
 
