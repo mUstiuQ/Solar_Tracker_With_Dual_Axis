@@ -1,1 +1,19 @@
+🔧 Componente hardware utilizate:
+Microcontroller:
+Arduino Uno R3
 
+Senzori:
+4 x LDR (Light Dependent Resistor) – pentru a detecta poziția soarelui
+Motoare:
+2 x Servo motor – pentru mișcarea panoului pe două axe (azimut și elevație)
+Display LCD I2C - afisare ora si temperatura
+
+Alimentare:
+Alimentator de laborator - 0-30 V - 0-10 A DC - 300 W
+
+Placă de test (Breadboard) și fire de conexiune:
+Fire male-male, male-female pentru conexiuni
+Rezistențe (de 10kΩ pentru LDR-uri)
+
+Structura fizică:
+Suport si macheta din carton si polistiern extrudat
