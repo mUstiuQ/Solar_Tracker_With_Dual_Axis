@@ -30,7 +30,7 @@ void loop() {
     int BL = analogRead(LDR_BL);
     int BR = analogRead(LDR_BR);
     
-    // Calcul diferențe
+    // Calcul diferente
     int deltaX = (TR + BR) - (TL + BL);
     int deltaY = (TL + TR) - (BL + BR);
 
