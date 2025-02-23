@@ -1,1 +1,13 @@
+📌 Descriere
 
+Acest proiect implementează un sistem de urmărire solară pe două axe (Dual Axis Solar Tracker), utilizând un microcontroler 
+Arduino. Sistemul optimizează captarea energiei solare prin ajustarea automată a unghiului panoului solar în funcție de 
+poziția soarelui.
+
+🎯 Caracteristici principale
+
+Detectează lumina solară utilizând senzori LDR
+Reglează poziția panoului pe două axe 
+Control prin servomotoare 
+Afișează informațiile pe un LCD I2C 
+Alimentare independentă cu panou solar 
