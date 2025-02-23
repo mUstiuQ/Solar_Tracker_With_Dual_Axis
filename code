@@ -1,1 +1,92 @@
+#include <Servo.h>
+
+Servo servohori; // servoul orizontal (de jos)
+int servoh = 0; // poziția inițială a servo-ului la 0 grade
+int servohLimitHigh = 90; // limita maximă a servo-ului orizontal
+int servohLimitLow = 10;   // limita minimă a servo-ului orizontal
+
+Servo servoverti; // servoul vertical (de sus)
+int servov = 0;
+int servovLimitHigh = 180;
+int servovLimitLow = 10;
+
+int ldrtopr = 1; // LDR dreapta sus, pin A1
+int ldrtopl = 2; // LDR stânga sus, pin A2
+int ldrbotr = 0; // LDR dreapta jos, pin A0
+int ldrbotl = 3; // LDR stânga jos, pin A3
+
+void setup() 
+{
+  servohori.attach(10); // servo orizontal conectat la pinul 10
+  servohori.write(0);
+  
+  servoverti.attach(9); // servo vertical conectat la pinul 9
+  servoverti.write(0);
+  delay(500); // întârziere inițială
+
+  Serial.begin(9600); // inițializare comunicare serială pentru afișare
+}
+
+void loop()
+{
+  servoh = servohori.read();
+  servov = servoverti.read();
+  
+  int topl = analogRead(ldrtopl);
+  int topr = analogRead(ldrtopr);
+  int botl = analogRead(ldrbotl);
+  int botr = analogRead(ldrbotr);
+  
+  int avgtop = (topl + topr) / 2;
+  int avgbot = (botl + botr) / 2;
+  int avgleft = (topl + botl) / 2;
+  int avgright = (topr + botr) / 2;
+
+  if (avgtop < avgbot)
+  {
+    servoverti.write(servov - 1);
+    if (servov > servovLimitHigh) 
+      servov = servovLimitHigh;
+    delay(8);
+  }
+  else if (avgbot < avgtop)
+  {
+    servoverti.write(servov + 1);
+    if (servov < servovLimitLow)
+      servov = servovLimitLow;
+    delay(8);
+  }
+  else 
+  {
+    servoverti.write(servov);
+  }
+  
+  if (avgleft > avgright)
+  {
+    servohori.write(servoh - 1);
+    if (servoh > servohLimitHigh)
+      servoh = servohLimitHigh;
+    delay(8);
+  }
+  else if (avgright > avgleft)
+  {
+    servohori.write(servoh + 1);
+    if (servoh < servohLimitLow)
+      servoh = servohLimitLow;
+    delay(8);
+  }
+  else 
+  {
+    servohori.write(servoh);
+  }
+
+  // Afișare poziții servouri în terminal
+  Serial.print("Servo orizontal: ");
+  Serial.print(servoh);
+  Serial.print("°, Servo vertical: ");
+  Serial.print(servov);
+  Serial.println("°");
+
+  delay(50);
+}
 
